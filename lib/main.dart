@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Send Bus Location',
       initialRoute: '/homepage',
+      //darkTheme: ThemeData.dark(),
       getPages: [
         GetPage(
             name: '/homepage',
