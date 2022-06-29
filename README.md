@@ -67,7 +67,9 @@ Technologies used in the project:
 ### Packages used
 
 - hive
+- Getx
 - geolocator
+- cell_info
 - permission_handler
 
 <!-- ### Structure -->
