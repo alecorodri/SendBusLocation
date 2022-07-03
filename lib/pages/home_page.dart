@@ -30,7 +30,7 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () => Get.changeThemeMode(ThemeMode.dark),
               icon: const Icon(Icons.dark_mode))
         ],
-        title: Text(widget.title),
+        title: Center(child: Text(widget.title)),
       ),
       body: Obx(() => userCtrl.userExist.value
           ? InformacionUsuario(user: userCtrl.user.value)

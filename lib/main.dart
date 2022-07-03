@@ -12,7 +12,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      color: Colors.red,
+      theme: ThemeData(
+        primarySwatch: Colors.green,
+      ),
       title: 'Send Bus Location',
       initialRoute: '/homepage',
       //darkTheme: ThemeData.dark(),
