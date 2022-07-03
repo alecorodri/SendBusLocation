@@ -1,14 +1,48 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:sendbuslocation_app/controllers/user_controller.dart';
+
+import '../models/user.dart';
 
 class SecondPage extends StatelessWidget {
   const SecondPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 200,
-      width: 200,
-      color: Colors.blue,
+    final userCtrl = Get.find<UserController>();
+
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Pagina 2'),
+      ),
+      body: Center(
+          child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          MaterialButton(
+              // ignore: sort_child_properties_last
+              child: const Text('Establecer Usuario',
+                  style: TextStyle(color: Colors.white)),
+              color: Colors.blue,
+              onPressed: () {
+                userCtrl.loadUser(User(name: 'Aleco', age: 21));
+              }),
+          MaterialButton(
+              // ignore: sort_child_properties_last
+              child: const Text('Cambiar Edad',
+                  style: TextStyle(color: Colors.white)),
+              color: Colors.blue,
+              onPressed: () {
+                userCtrl.changeAge(25);
+              }),
+          MaterialButton(
+              // ignore: sort_child_properties_last
+              child: const Text('Añadir Profesion',
+                  style: const TextStyle(color: Colors.white)),
+              color: Colors.blue,
+              onPressed: () {}),
+        ],
+      )),
     );
   }
 }
