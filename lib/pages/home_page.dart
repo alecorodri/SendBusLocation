@@ -3,9 +3,10 @@ import 'package:get/get.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 
 import 'package:sendbuslocation_app/controllers/user_controller.dart';
-import 'package:sendbuslocation_app/pages/second_page.dart';
+import 'package:sendbuslocation_app/pages/settings_page.dart';
 
 import '../models/user.dart';
+import 'travel_page.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({
@@ -23,8 +24,6 @@ class _MyHomePageState extends State<MyHomePage> {
   int currentIndex = 0;
   @override
   Widget build(BuildContext context) {
-    final userCtrl = Get.put(UserController());
-
     return Scaffold(
         appBar: AppBar(
           actions: [
@@ -34,18 +33,18 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
           title: Center(child: Text(widget.title)),
         ),
-        body: Obx(() => userCtrl.userExist.value
-            ? InformacionUsuario(user: userCtrl.user.value)
-            : const NoInfo()),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () => Get.to(const SecondPage()),
-          //_incrementCounter,
-          tooltip: 'Start Travel',
-          child: const Icon(
-            Icons.play_arrow_rounded,
-            size: 40,
-          ),
-        ),
+        body: currentIndex == 0 ? const TravelPage() : const NoInfo(),
+        floatingActionButton: currentIndex == 0
+            ? FloatingActionButton(
+                onPressed: () => Get.to(const SettingsPage()),
+                //_incrementCounter,
+                tooltip: 'Start Travel',
+                child: const Icon(
+                  Icons.play_arrow_rounded,
+                  size: 40,
+                ),
+              )
+            : null,
         bottomNavigationBar: SalomonBottomBar(
           currentIndex: currentIndex,
           onTap: (i) => setState(() => currentIndex = i),
@@ -74,10 +73,8 @@ class NoInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: const Center(
-        child: Text('No hay usuario selecionado'),
-      ),
+    return const Center(
+      child: Text('No hay usuario selecionado'),
     );
   }
 }

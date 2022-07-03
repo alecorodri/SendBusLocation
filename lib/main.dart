@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sendbuslocation_app/pages/home_page.dart';
-import 'package:sendbuslocation_app/pages/second_page.dart';
+import 'package:sendbuslocation_app/pages/settings_page.dart';
 
 void main() => runApp(const MyApp());
 
@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
             page: () => const MyHomePage(
                   title: 'Send Bus Location',
                 )),
-        GetPage(name: '/secondpage', page: () => const SecondPage())
+        GetPage(name: '/settingPage', page: () => const SettingsPage())
       ],
     );
   }

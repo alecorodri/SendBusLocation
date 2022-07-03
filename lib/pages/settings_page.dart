@@ -4,8 +4,8 @@ import 'package:sendbuslocation_app/controllers/user_controller.dart';
 
 import '../models/user.dart';
 
-class SecondPage extends StatelessWidget {
-  const SecondPage({Key? key}) : super(key: key);
+class SettingsPage extends StatelessWidget {
+  const SettingsPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
