@@ -25,20 +25,13 @@ class SecondPage extends StatelessWidget {
                   style: TextStyle(color: Colors.white)),
               color: Colors.blue,
               onPressed: () {
-                userCtrl.loadUser(User(name: 'Aleco', age: 21));
-              }),
-          MaterialButton(
-              // ignore: sort_child_properties_last
-              child: const Text('Cambiar Edad',
-                  style: TextStyle(color: Colors.white)),
-              color: Colors.blue,
-              onPressed: () {
-                userCtrl.changeAge(25);
+                userCtrl.loadUser(
+                    User(name: 'Aleco', date: DateTime.now().toString()));
               }),
           MaterialButton(
               // ignore: sort_child_properties_last
               child: const Text('Añadir Profesion',
-                  style: const TextStyle(color: Colors.white)),
+                  style: TextStyle(color: Colors.white)),
               color: Colors.blue,
               onPressed: () {}),
         ],

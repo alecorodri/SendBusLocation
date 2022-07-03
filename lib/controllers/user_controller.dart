@@ -9,10 +9,4 @@ class UserController extends GetxController {
     this.user.value = user;
     userExist.value = true;
   }
-
-  void changeAge(int age) {
-    user.update((val) {
-      val!.age = age;
-    });
-  }
 }
