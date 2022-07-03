@@ -67,9 +67,11 @@ Technologies used in the project:
 ### Packages used
 
 - hive
-- Getx
+- get
 - geolocator
 - cell_info
+- geocoding
+- salomon_bottom_bar
 - permission_handler
 
 <!-- ### Structure -->
