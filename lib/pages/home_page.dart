@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
+import 'package:sendbuslocation_app/controllers/theme_controller.dart';
 import 'package:sendbuslocation_app/pages/settings_page.dart';
-
-import '../controllers/theme_controller.dart';
 import '../models/user.dart';
 import 'travel_page.dart';
 
@@ -19,9 +19,9 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  final themeController = Get.find<ThemeController>();
   int currentIndex = 0;
   bool _active = false;
-  var theme = ThemeController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,8 +29,9 @@ class _MyHomePageState extends State<MyHomePage> {
           actions: [
             IconButton(
                 onPressed: (() {
-                  theme.changeTheme();
-                  print('Home page:${theme.isActive.value}');
+                  Get.isDarkMode
+                      ? Get.changeThemeMode(ThemeMode.light)
+                      : Get.changeThemeMode(ThemeMode.dark);
                 }),
                 icon: const Icon(Icons.dark_mode))
           ],
@@ -44,7 +45,6 @@ class _MyHomePageState extends State<MyHomePage> {
                     _active = !_active;
                   });
                 },
-                //_incrementCounter,
                 tooltip: 'Start Travel',
                 child: _active
                     ? const Icon(
