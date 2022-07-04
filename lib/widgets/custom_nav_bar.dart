@@ -1,12 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 
-class CustomNavBar {
-  //var index;
+class CustomNavBar extends StatefulWidget {
+  const CustomNavBar({
+    Key? key,
+    required this.index,
+  }) : super(key: key);
 
-  Widget customNavBar({@required var index}) {
-    return SalomonBottomBar(currentIndex: index,
-        // onTap: (i) =>  => index = i),
+  final int index;
+
+  @override
+  State<CustomNavBar> createState() => _CustomNavBarState();
+}
+
+class _CustomNavBarState extends State<CustomNavBar> {
+  int? currentIndex = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    currentIndex = widget.index;
+
+    @override
+    Widget build(BuildContext context) {
+      return SalomonBottomBar(
+        currentIndex: 0,
+        onTap: (i) => setState(() => currentIndex = i),
         items: [
           /// Location
           SalomonBottomBarItem(
@@ -20,7 +39,15 @@ class CustomNavBar {
             icon: const Icon(Icons.settings),
             title: const Text("Settings"),
             selectedColor: Colors.teal,
-          )
-        ]);
+          ),
+        ],
+      );
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    throw UnimplementedError();
   }
 }

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:sendbuslocation_app/pages/home_page.dart';
-import 'package:sendbuslocation_app/pages/settings_page.dart';
+import 'package:sendbuslocation_app/routes/routes.dart';
 import 'package:sendbuslocation_app/widgets/custom_themes.dart';
 
 import 'controllers/theme_controller.dart';
@@ -16,19 +15,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: CustomThemes.primaryTheme,
-      darkTheme: CustomThemes.darkTheme,
-      title: 'Send Bus Location',
-      initialRoute: '/homepage',
-      getPages: [
-        GetPage(
-            name: '/homepage',
-            page: () => const MyHomePage(
-                  title: 'Send Bus Location',
-                )),
-        GetPage(name: '/settingPage', page: () => const SettingsPage())
-      ],
-    );
+        debugShowCheckedModeBanner: false,
+        theme: CustomThemes.primaryTheme,
+        darkTheme: CustomThemes.darkTheme,
+        title: 'Send Bus Location',
+        initialRoute: '/homepage',
+        getPages: Routes.routes);
   }
 }

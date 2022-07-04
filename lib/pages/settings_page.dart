@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../models/user.dart';
 
 class SettingsPage extends StatelessWidget {
   const SettingsPage({Key? key}) : super(key: key);
