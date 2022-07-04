@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 import 'package:sendbuslocation_app/pages/settings_page.dart';
 
+import '../controllers/theme_controller.dart';
 import '../models/user.dart';
 import 'travel_page.dart';
 
@@ -20,28 +20,41 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int currentIndex = 0;
+  bool _active = false;
+  var theme = ThemeController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
           actions: [
             IconButton(
-                onPressed: () => Get.changeThemeMode(ThemeMode.dark),
+                onPressed: (() {
+                  theme.changeTheme();
+                  print('Home page:${theme.isActive.value}');
+                }),
                 icon: const Icon(Icons.dark_mode))
           ],
           title: Center(child: Text(widget.title)),
         ),
-        body: currentIndex == 0 ? const TravelPage() : const NoInfo(),
+        body: currentIndex == 0 ? const TravelPage() : const SettingsPage(),
         floatingActionButton: currentIndex == 0
             ? FloatingActionButton(
-                onPressed: () => Get.to(const SettingsPage()),
+                onPressed: () {
+                  setState(() {
+                    _active = !_active;
+                  });
+                },
                 //_incrementCounter,
                 tooltip: 'Start Travel',
-                child: const Icon(
-                  Icons.play_arrow_rounded,
-                  size: 40,
-                ),
-              )
+                child: _active
+                    ? const Icon(
+                        Icons.pause,
+                        size: 40,
+                      )
+                    : const Icon(
+                        Icons.play_arrow_rounded,
+                        size: 40,
+                      ))
             : null,
         bottomNavigationBar: SalomonBottomBar(
           currentIndex: currentIndex,

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 
 class CustomNavBar {
-  var index;
+  //var index;
 
   Widget customNavBar({@required var index}) {
     return SalomonBottomBar(currentIndex: index,
