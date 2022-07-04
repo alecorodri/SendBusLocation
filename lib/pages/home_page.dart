@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
-
-import 'package:sendbuslocation_app/controllers/user_controller.dart';
 import 'package:sendbuslocation_app/pages/settings_page.dart';
 
 import '../models/user.dart';
