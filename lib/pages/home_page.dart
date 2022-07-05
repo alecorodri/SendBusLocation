@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 import 'package:sendbuslocation_app/controllers/theme_controller.dart';
 import 'package:sendbuslocation_app/pages/settings_page.dart';
+import 'location_page.dart';
 import 'travel_page.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -63,6 +64,7 @@ class _MyHomePageState extends State<MyHomePage> {
           setState(() {
             _active = !_active;
           });
+          Get.to(LocationPage());
         },
         backgroundColor: Colors.green,
         tooltip: 'Start Travel',
