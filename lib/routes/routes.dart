@@ -14,7 +14,7 @@ class Routes {
     GetPage(name: '/settingPage', page: () => const SettingsPage()),
     GetPage(
         name: '/locationPage',
-        page: () => LocationPage(),
+        page: () => const LocationPage(),
         binding: LocationBring()),
   ];
 }

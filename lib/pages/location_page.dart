@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 import 'package:sendbuslocation_app/controllers/location_controller.dart';
 
 class LocationPage extends GetView<LocationController> {
+  const LocationPage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
