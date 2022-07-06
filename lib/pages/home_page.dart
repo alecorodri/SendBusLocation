@@ -30,7 +30,15 @@ class _MyHomePageState extends State<MyHomePage> {
                 }),
                 icon: const Icon(Icons.dark_mode))
           ],
-          title: const Center(child: Text('Send Bus Location')),
+          title: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: const [
+              SizedBox(
+                width: 40,
+              ),
+              Center(child: Text('Send Bus Location')),
+            ],
+          ),
         ),
         body: currentIndex == 0 ? const TravelPage() : const SettingsPage(),
         floatingActionButton:

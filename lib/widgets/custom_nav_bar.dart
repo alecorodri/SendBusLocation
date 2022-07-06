@@ -20,34 +20,28 @@ class _CustomNavBarState extends State<CustomNavBar> {
   void initState() {
     super.initState();
     currentIndex = widget.index;
-
-    @override
-    Widget build(BuildContext context) {
-      return SalomonBottomBar(
-        currentIndex: 0,
-        onTap: (i) => setState(() => currentIndex = i),
-        items: [
-          /// Location
-          SalomonBottomBarItem(
-            icon: const Icon(Icons.location_on_outlined),
-            title: const Text("GPS"),
-            selectedColor: Colors.orange,
-          ),
-
-          /// Settings
-          SalomonBottomBarItem(
-            icon: const Icon(Icons.settings),
-            title: const Text("Settings"),
-            selectedColor: Colors.teal,
-          ),
-        ],
-      );
-    }
   }
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
+    return SalomonBottomBar(
+      currentIndex: 0,
+      onTap: (i) => setState(() => currentIndex = i),
+      items: [
+        /// Location
+        SalomonBottomBarItem(
+          icon: const Icon(Icons.location_on_outlined),
+          title: const Text("GPS"),
+          selectedColor: Colors.orange,
+        ),
+
+        /// Settings
+        SalomonBottomBarItem(
+          icon: const Icon(Icons.settings),
+          title: const Text("Settings"),
+          selectedColor: Colors.teal,
+        ),
+      ],
+    );
   }
 }

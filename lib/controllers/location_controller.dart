@@ -17,6 +17,7 @@ class LocationController extends GetxController {
   }
 
   @override
+  // ignore: unnecessary_overrides
   void onReady() {
     super.onReady();
   }
