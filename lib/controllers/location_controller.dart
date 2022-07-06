@@ -8,13 +8,14 @@ class LocationController extends GetxController {
   var latitude = 'Getting Latitude..'.obs;
   var longitude = 'Getting Longitude..'.obs;
   var address = 'Getting Address..'.obs;
+  var serviceEnabled = false.obs;
   late StreamSubscription<Position> streamSubscription;
 
-  @override
-  void onInit() async {
-    super.onInit();
-    getLocation();
-  }
+  // @override
+  // void onInit() async {
+  //   super.onInit();
+  //   getLocation();
+  // }
 
   @override
   // ignore: unnecessary_overrides
@@ -28,7 +29,7 @@ class LocationController extends GetxController {
   }
 
   getLocation() async {
-    bool serviceEnabled;
+    bool serviceEnabled = this.serviceEnabled.value;
 
     LocationPermission permission;
     // Test if location services are enabled.

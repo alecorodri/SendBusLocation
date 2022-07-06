@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
+import 'package:sendbuslocation_app/controllers/location_controller.dart';
 import 'package:sendbuslocation_app/pages/settings_page.dart';
 import 'location_page.dart';
 import 'travel_page.dart';
@@ -17,6 +18,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int currentIndex = 0;
   bool _active = false;
+  final ctrl = Get.put(LocationController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,7 +42,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ],
           ),
         ),
-        body: currentIndex == 0 ? const TravelPage() : const SettingsPage(),
+        body: currentIndex == 0 ? const LocationPage() : const SettingsPage(),
         floatingActionButton:
             currentIndex == 0 ? _floatingActionBottom() : null,
         bottomNavigationBar: SalomonBottomBar(
@@ -69,8 +71,9 @@ class _MyHomePageState extends State<MyHomePage> {
         onPressed: () {
           setState(() {
             _active = !_active;
+            ctrl.serviceEnabled.value = !_active;
+            ctrl.getLocation();
           });
-          Get.to(const LocationPage());
         },
         backgroundColor: Colors.green,
         tooltip: 'Start Travel',
