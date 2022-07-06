@@ -71,7 +71,7 @@ class _MyHomePageState extends State<MyHomePage> {
         onPressed: () {
           setState(() {
             _active = !_active;
-            ctrl.serviceEnabled.value = !_active;
+            ctrl.isactive.value = !_active;
             ctrl.getLocation();
           });
         },

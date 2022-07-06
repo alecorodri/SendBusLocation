@@ -50,7 +50,7 @@ class LocationPage extends GetView<LocationController> {
               ),
               Obx(
                 () => Text(
-                  'status : ${controller.serviceEnabled.value}',
+                  'status : ${controller.isactive.value}',
                   style: const TextStyle(color: Colors.black, fontSize: 25),
                 ),
               ),

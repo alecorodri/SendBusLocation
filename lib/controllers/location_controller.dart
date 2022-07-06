@@ -8,7 +8,7 @@ class LocationController extends GetxController {
   var latitude = 'Getting Latitude..'.obs;
   var longitude = 'Getting Longitude..'.obs;
   var address = 'Getting Address..'.obs;
-  var serviceEnabled = false.obs;
+  var isactive = false.obs;
   late StreamSubscription<Position> streamSubscription;
 
   // @override
@@ -29,7 +29,8 @@ class LocationController extends GetxController {
   }
 
   getLocation() async {
-    bool serviceEnabled = this.serviceEnabled.value;
+    bool serviceEnabled;
+    bool isactive = this.isactive.value;
 
     LocationPermission permission;
     // Test if location services are enabled.
@@ -58,14 +59,16 @@ class LocationController extends GetxController {
       return Future.error(
           'Location permissions are permanently denied, we cannot request permissions.');
     }
-    // When we reach here, permissions are granted and we can
-    // continue accessing the position of the device.
-    streamSubscription =
-        Geolocator.getPositionStream().listen((Position position) {
-      latitude.value = 'Latitude : ${position.latitude}';
-      longitude.value = 'Longitude : ${position.longitude}';
-      getAddressFromLatLang(position);
-    });
+    if (permission == LocationPermission.whileInUse && isactive == true) {
+      // When we reach here, permissions are granted and we can
+      // continue accessing the position of the device.
+      streamSubscription =
+          Geolocator.getPositionStream().listen((Position position) {
+        latitude.value = 'Latitude : ${position.latitude}';
+        longitude.value = 'Longitude : ${position.longitude}';
+        getAddressFromLatLang(position);
+      });
+    }
   }
 
   Future<void> getAddressFromLatLang(Position position) async {
