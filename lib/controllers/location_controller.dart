@@ -8,6 +8,7 @@ class LocationController extends GetxController {
   var latitude = 'Getting Latitude..'.obs;
   var longitude = 'Getting Longitude..'.obs;
   var address = 'Getting Address..'.obs;
+  var speed = 'Getting Speed..'.obs;
   var isactive = false.obs;
   late StreamSubscription<Position> streamSubscription;
 
@@ -66,8 +67,11 @@ class LocationController extends GetxController {
           Geolocator.getPositionStream().listen((Position position) {
         latitude.value = 'Latitude : ${position.latitude}';
         longitude.value = 'Longitude : ${position.longitude}';
+        speed.value = 'Speed : ${position.speed}';
         getAddressFromLatLang(position);
       });
+    } else if (!isactive) {
+      streamSubscription.cancel();
     }
   }
 

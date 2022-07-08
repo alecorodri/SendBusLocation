@@ -18,7 +18,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int currentIndex = 0;
   bool _active = false;
-  final ctrl = Get.put(LocationController());
+  final _ctrl = Get.put(LocationController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -71,8 +71,8 @@ class _MyHomePageState extends State<MyHomePage> {
         onPressed: () {
           setState(() {
             _active = !_active;
-            ctrl.isactive.value = !_active;
-            ctrl.getLocation();
+            _ctrl.isactive.value = _active;
+            _ctrl.getLocation();
           });
         },
         backgroundColor: Colors.green,
