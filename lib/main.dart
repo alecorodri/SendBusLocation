@@ -13,8 +13,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
         debugShowCheckedModeBanner: false,
-        theme: CustomThemes.primaryTheme,
-        darkTheme: CustomThemes.darkTheme,
+        theme: CustomThemes.darkTheme,
+        darkTheme: CustomThemes.primaryTheme,
         title: 'Send Bus Location',
         initialRoute: '/homepage',
         getPages: Routes.routes);

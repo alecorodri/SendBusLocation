@@ -26,7 +26,7 @@ class _MyHomePageState extends State<MyHomePage> {
           actions: [
             IconButton(
                 onPressed: (() {
-                  Get.isDarkMode
+                  !Get.isDarkMode
                       ? Get.changeThemeMode(ThemeMode.light)
                       : Get.changeThemeMode(ThemeMode.dark);
                 }),
