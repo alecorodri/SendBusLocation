@@ -6,7 +6,7 @@
 
 - [Demo](#demo)
 
-- [Features](#features)
+- [Upcoming Features](#Upcoming-Features)
 
 - [Installation Step](#installation-step)
 
@@ -24,7 +24,7 @@
 
 ## Demo
 
-## Features
+## Upcoming Features
 
 These are some of the upcoming features of the project:
 
