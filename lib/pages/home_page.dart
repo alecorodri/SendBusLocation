@@ -20,17 +20,14 @@ class _MyHomePageState extends State<MyHomePage> {
   int currentIndex = 0;
   bool _active = false;
   final _ctrl = Get.put(LocationController());
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: context.theme.backgroundColor,
         appBar: AppBar(
           actions: [
             IconButton(
                 onPressed: (() {
-                  !Get.isDarkMode
-                      ? Get.changeThemeMode(ThemeMode.light)
-                      : Get.changeThemeMode(ThemeMode.dark);
                   ThemeController().switchTheme();
                 }),
                 icon: const Icon(Icons.dark_mode))

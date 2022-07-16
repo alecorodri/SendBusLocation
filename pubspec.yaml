@@ -41,7 +41,7 @@ dependencies:
   geocoding: ^2.0.4
   salomon_bottom_bar: ^3.3.1
   shared_preferences: ^2.0.15
-  permission_handler: ^10.0.0
+  #Spermission_handler: ^10.0.0
   #device_info_plus: ^0.0.1
   get_storage: ^2.0.3
   #hive: ^2.2.3

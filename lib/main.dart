@@ -16,8 +16,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
         debugShowCheckedModeBanner: false,
-        theme: CustomThemes.dark,
-        darkTheme: CustomThemes.light,
+        theme: CustomThemes.light,
+        darkTheme: CustomThemes.dark,
         themeMode: ThemeController().theme,
         title: 'Send Bus Location',
         initialRoute: '/homepage',
