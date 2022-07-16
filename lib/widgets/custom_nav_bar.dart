@@ -32,14 +32,14 @@ class _CustomNavBarState extends State<CustomNavBar> {
         SalomonBottomBarItem(
           icon: const Icon(Icons.location_on_outlined),
           title: const Text("GPS"),
-          selectedColor: Colors.orange,
+          selectedColor: const Color(0xFFFF9800),
         ),
 
         /// Settings
         SalomonBottomBarItem(
           icon: const Icon(Icons.settings),
           title: const Text("Settings"),
-          selectedColor: Colors.teal,
+          selectedColor: const Color(0xFF009688),
         ),
       ],
     );

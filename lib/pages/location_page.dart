@@ -60,6 +60,12 @@ class LocationPage extends GetView<LocationController> {
                   style: const TextStyle(color: Colors.black, fontSize: 25),
                 ),
               ),
+              Obx(
+                () => Text(
+                  'status : ${controller.speed.value}',
+                  style: const TextStyle(color: Colors.black, fontSize: 25),
+                ),
+              ),
             ],
           ),
         ),

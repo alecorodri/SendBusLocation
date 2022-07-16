@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
+import 'package:sendbuslocation_app/controllers/theme_controller.dart';
 import 'package:sendbuslocation_app/routes/routes.dart';
 import 'package:sendbuslocation_app/widgets/custom_themes.dart';
 
-void main() {
+void main() async {
+  await GetStorage.init();
   runApp(const MyApp());
 }
 
@@ -13,8 +16,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
         debugShowCheckedModeBanner: false,
-        theme: CustomThemes.darkTheme,
-        darkTheme: CustomThemes.primaryTheme,
+        theme: CustomThemes.dark,
+        darkTheme: CustomThemes.light,
+        themeMode: ThemeController().theme,
         title: 'Send Bus Location',
         initialRoute: '/homepage',
         getPages: Routes.routes);

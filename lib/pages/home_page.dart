@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 import 'package:sendbuslocation_app/controllers/location_controller.dart';
-import 'package:sendbuslocation_app/pages/settings_page.dart';
+import 'package:sendbuslocation_app/controllers/theme_controller.dart';
+//import 'package:sendbuslocation_app/pages/settings_page.dart';
 import 'location_page.dart';
 import 'travel_page.dart';
 
@@ -22,6 +23,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: context.theme.backgroundColor,
         appBar: AppBar(
           actions: [
             IconButton(
@@ -29,6 +31,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   !Get.isDarkMode
                       ? Get.changeThemeMode(ThemeMode.light)
                       : Get.changeThemeMode(ThemeMode.dark);
+                  ThemeController().switchTheme();
                 }),
                 icon: const Icon(Icons.dark_mode))
           ],
