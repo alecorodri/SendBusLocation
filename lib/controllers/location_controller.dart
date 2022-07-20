@@ -76,8 +76,9 @@ class LocationController extends GetxController {
   }
 
   Future<void> getAddressFromLatLang(Position position) async {
-    List<Placemark> placemark =
-        await placemarkFromCoordinates(position.latitude, position.longitude);
+    List<Placemark> placemark = await placemarkFromCoordinates(
+        position.latitude, position.longitude,
+        localeIdentifier: 'Cuba');
     Placemark place = placemark[0];
     address.value = 'Address : ${place.locality},${place.country}';
   }

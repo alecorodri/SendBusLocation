@@ -6,7 +6,7 @@ class User {
   String? longitude;
   bool? isActive;
   String? url;
-  String? date;
+  DateTime? date;
 
   User({
     this.name,
