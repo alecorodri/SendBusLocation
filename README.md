@@ -24,6 +24,8 @@
 
 ## Demo
 
+![Light Mode](./demo/light_mode.jpg)
+
 ## Upcoming Features
 
 These are some of the upcoming features of the project:
@@ -40,9 +42,9 @@ These are some of the upcoming features of the project:
 
 1. Clone the repository.
 
- ```
+```
 git clone https://github.com/alecorodri/SendBusLocation.git
- ```
+```
 
 2. Open the project with Visual Studio Code/Android Studio.
 
