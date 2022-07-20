@@ -42,12 +42,12 @@ class LocationPage extends GetView<LocationController> {
                       fontSize: 25,
                     ),
                   )),
-              Obx(
-                () => Text(
-                  'Address : ${controller.address.value}',
-                  style: const TextStyle(color: Colors.black, fontSize: 25),
-                ),
-              ),
+              // Obx(
+              //   () => Text(
+              //     'Address : ${controller.address.value}',
+              //     style: const TextStyle(color: Colors.black, fontSize: 25),
+              //   ),
+              // ),
               Obx(
                 () => Text(
                   'Speed : ${controller.speed.value}',

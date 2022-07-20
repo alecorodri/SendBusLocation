@@ -1,14 +1,15 @@
 import 'dart:async';
 
-import 'package:geocoding/geocoding.dart';
+// import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';
 
 class LocationController extends GetxController {
   var latitude = 'Getting Latitude..'.obs;
   var longitude = 'Getting Longitude..'.obs;
-  var address = 'Getting Address..'.obs;
+  // var address = 'Getting Address..'.obs;
   var speed = 'Getting Speed..'.obs;
+  var pos = ''.obs;
   var isactive = false.obs;
   late StreamSubscription<Position> streamSubscription;
 
@@ -68,18 +69,19 @@ class LocationController extends GetxController {
         latitude.value = 'Latitude : ${position.latitude}';
         longitude.value = 'Longitude : ${position.longitude}';
         speed.value = 'Speed : ${position.speed}';
-        getAddressFromLatLang(position);
+
+        // getAddressFromLatLang(position);
       });
     } else if (!isactive) {
       streamSubscription.cancel();
     }
   }
 
-  Future<void> getAddressFromLatLang(Position position) async {
-    List<Placemark> placemark = await placemarkFromCoordinates(
-        position.latitude, position.longitude,
-        localeIdentifier: 'Cuba');
-    Placemark place = placemark[0];
-    address.value = 'Address : ${place.locality},${place.country}';
-  }
+  // Future<void> getAddressFromLatLang(Position position) async {
+  //   List<Placemark> placemark =
+  //       await placemarkFromCoordinates(position.latitude, position.longitude);
+  //   Placemark place = placemark[0];
+  //   address.value =
+  //       'Address : ${place.street}, ${place.subLocality}, ${place.locality}, ${place.postalCode}, ${place.country}';
+  // }
 }

@@ -53,14 +53,14 @@ class _MyHomePageState extends State<MyHomePage> {
             SalomonBottomBarItem(
               icon: const Icon(Icons.location_on_outlined),
               title: const Text("GPS"),
-              selectedColor: Colors.orange,
+              selectedColor: const Color(0xFFFF9800),
             ),
 
             /// Settings
             SalomonBottomBarItem(
               icon: const Icon(Icons.settings),
               title: const Text("Settings"),
-              selectedColor: Colors.teal,
+              selectedColor: const Color(0xFF009688),
             ),
           ],
         ));
@@ -75,7 +75,7 @@ class _MyHomePageState extends State<MyHomePage> {
             _ctrl.getLocation();
           });
         },
-        backgroundColor: Colors.green,
+        backgroundColor: const Color(0xFF4CAF50),
         tooltip: 'Start Travel',
         child: _active
             ? const Icon(

@@ -1,5 +1,5 @@
 name: sendbuslocation_app
-description: A new Flutter project.
+description: Send bus location in real time to see its route.
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -31,22 +31,19 @@ dependencies:
     sdk: flutter
 
 
-  # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   get: ^4.6.5
   cell_info: ^0.2.9
   geolocator: ^8.2.1
-  #location: ^4.4.0
   geocoding: ^2.0.4
   salomon_bottom_bar: ^3.3.1
-  shared_preferences: ^2.0.15
-  #Spermission_handler: ^10.0.0
-  #device_info_plus: ^0.0.1
+  #shared_preferences: ^2.0.15
+  #background_fetch: '^1.0.3'
+  #device_info_plus: ^4.0.1
   get_storage: ^2.0.3
+  #Spermission_handler: ^10.0.0
   #hive: ^2.2.3
   #hive_flutter: ^1.1.0
-  #path_provider: ^2.0.11
 
 dev_dependencies:
   flutter_test:
