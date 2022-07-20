@@ -3,7 +3,9 @@ import 'package:get/get.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 import 'package:sendbuslocation_app/controllers/location_controller.dart';
 import 'package:sendbuslocation_app/controllers/theme_controller.dart';
+import 'package:sendbuslocation_app/pages/settings_page.dart';
 //import 'package:sendbuslocation_app/pages/settings_page.dart';
+import '../components/color_palette_componets.dart';
 import 'location_page.dart';
 import 'travel_page.dart';
 
@@ -25,12 +27,13 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          backgroundColor: ColorPalette.teal,
           actions: [
             IconButton(
                 onPressed: (() {
                   ThemeController().switchTheme();
                 }),
-                icon: const Icon(Icons.dark_mode))
+                icon: const Icon(Icons.brightness_medium_outlined)),
           ],
           title: Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -42,7 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ],
           ),
         ),
-        body: currentIndex == 0 ? const LocationPage() : const TravelPage(),
+        body: currentIndex == 0 ? const LocationPage() : const SettingsPage(),
         floatingActionButton:
             currentIndex == 0 ? _floatingActionBottom() : null,
         bottomNavigationBar: SalomonBottomBar(
@@ -75,7 +78,7 @@ class _MyHomePageState extends State<MyHomePage> {
             _ctrl.getLocation();
           });
         },
-        backgroundColor: const Color(0xFF4CAF50),
+        backgroundColor: ColorPalette.teal,
         tooltip: 'Start Travel',
         child: _active
             ? const Icon(

@@ -3,6 +3,7 @@ import 'package:sendbuslocation_app/components/color_palette_componets.dart';
 
 class CustomThemes {
   static final light = ThemeData.light().copyWith(
+    primaryColor: ColorPalette.teal,
     backgroundColor: ColorPalette.secundaryGreen,
     bottomAppBarColor: ColorPalette.secundaryGreen,
     buttonTheme: const ButtonThemeData(

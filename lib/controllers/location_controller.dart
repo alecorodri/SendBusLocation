@@ -72,6 +72,8 @@ class LocationController extends GetxController {
 
         // getAddressFromLatLang(position);
       });
+      Get.snackbar('Messege',
+          'Latitude : ${latitude.value},  ${longitude.value}, ${speed.value},');
     } else if (!isactive) {
       streamSubscription.cancel();
     }
