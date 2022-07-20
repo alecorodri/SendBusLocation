@@ -142,7 +142,16 @@ class _TravelPageState extends State<TravelPage> {
               ),
             ],
           ),
-          Text("$_value")
+          Text("$_value"),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(20, 50, 20, 20),
+            child: Image.asset(
+              'lib/assets/images/bus.png',
+              height: 300,
+              width: 300,
+              scale: 0.9,
+            ),
+          )
         ],
       ),
     );

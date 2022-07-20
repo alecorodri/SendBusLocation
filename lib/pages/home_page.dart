@@ -45,7 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ],
           ),
         ),
-        body: currentIndex == 0 ? const LocationPage() : const SettingsPage(),
+        body: currentIndex == 0 ? const TravelPage() : const SettingsPage(),
         floatingActionButton:
             currentIndex == 0 ? _floatingActionBottom() : null,
         bottomNavigationBar: SalomonBottomBar(

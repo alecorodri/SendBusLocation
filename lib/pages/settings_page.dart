@@ -27,10 +27,11 @@ class SettingsPage extends StatelessWidget {
             ),
           ),
           MaterialButton(
-              // ignore: sort_child_properties_last
-              child: const Text('Test', style: TextStyle(color: Colors.white)),
-              color: const Color(0xFF009688),
-              onPressed: () {}),
+            // ignore: sort_child_properties_last
+            child: const Text('Test', style: TextStyle(color: Colors.white)),
+            color: const Color(0xFF009688),
+            onPressed: () {},
+          ),
           const SizedBox(
             height: 10,
           ),
