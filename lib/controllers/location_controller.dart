@@ -1,6 +1,7 @@
 import 'dart:async';
 
 // import 'package:geocoding/geocoding.dart';
+import 'package:background_fetch/background_fetch.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';
 
@@ -13,10 +14,17 @@ class LocationController extends GetxController {
   var isactive = false.obs;
   late StreamSubscription<Position> streamSubscription;
 
-  // @override
-  // void onInit() async {
-  //   super.onInit();
-  //   getLocation();
+  // void backgroundFetchHeadlessTask(HeadlessTask task) async {
+  //   String taskId = task.taskId;
+  //   bool isTimeout = task.timeout;
+  //   if (isTimeout) {
+  //     // This task has exceeded its allowed running-time.  You must stop what you're doing and immediately .finish(taskId)
+  //     print("[BackgroundFetch] Headless task timed-out: $taskId");
+  //     BackgroundFetch.finish(taskId);
+  //     return;
+  //   }
+  //   print("[BackgroundFetch] Headless event received: $taskId");
+  //   BackgroundFetch.finish(taskId);
   // }
 
   @override
@@ -28,14 +36,6 @@ class LocationController extends GetxController {
   @override
   void onClose() {
     streamSubscription.cancel();
-  }
-
-  @override
-  // ignore: unnecessary_overrides
-  void dispose() {
-    streamSubscription.pause();
-    streamSubscription.resume();
-    super.dispose();
   }
 
   getLocation() async {

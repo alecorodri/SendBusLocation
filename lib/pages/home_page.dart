@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
-import 'package:sendbuslocation_app/controllers/home_page_controller.dart';
 import 'package:sendbuslocation_app/controllers/location_controller.dart';
 import 'package:sendbuslocation_app/controllers/theme_controller.dart';
 import 'package:sendbuslocation_app/pages/settings_page.dart';
@@ -77,13 +76,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   FloatingActionButton _floatingActionBottom() {
     return FloatingActionButton(
-        onPressed: () {
-          setState(() {
-            _active = !_active;
-            _locatCtrl.isactive.value = _active;
-            _locatCtrl.getLocation();
-          });
-        },
+        onPressed: () => _activeFAB(),
         backgroundColor: ColorPalette.teal,
         tooltip: 'Start Travel',
         child: _active
@@ -95,5 +88,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 Icons.play_arrow_rounded,
                 size: 40,
               ));
+  }
+
+  void _activeFAB() {
+    setState(() {
+      _active = !_active;
+      _locatCtrl.isactive.value = _active;
+      _locatCtrl.getLocation();
+    });
   }
 }
