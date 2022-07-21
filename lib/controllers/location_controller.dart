@@ -30,6 +30,14 @@ class LocationController extends GetxController {
     streamSubscription.cancel();
   }
 
+  @override
+  // ignore: unnecessary_overrides
+  void dispose() {
+    streamSubscription.pause();
+    streamSubscription.resume();
+    super.dispose();
+  }
+
   getLocation() async {
     bool serviceEnabled;
     bool isactive = this.isactive.value;

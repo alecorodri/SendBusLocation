@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:sendbuslocation_app/blindings/home_page_blindings.dart';
 
 import '../blindings/location_blindings.dart';
 import '../pages/home_page.dart';
@@ -10,11 +11,11 @@ class Routes {
     GetPage(
         name: '/homepage',
         page: () => const MyHomePage(),
-        binding: LocationBring()),
+        bindings: [LocationBinding(), HomePageBinding()]),
     GetPage(name: '/settingPage', page: () => const SettingsPage()),
     GetPage(
         name: '/locationPage',
         page: () => const LocationPage(),
-        binding: LocationBring()),
+        binding: LocationBinding()),
   ];
 }
