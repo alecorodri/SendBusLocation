@@ -64,7 +64,7 @@ Technologies used in the project:
 - Flutter 3.0.1
 - Visual Studio Code
 
-### Packages used
+### Packages used in the project:
 
 - hive
 - Getx
@@ -83,6 +83,6 @@ Technologies used in the project:
 
 > This project is licensed under the Apache License Version 2.0
 
-## Author
+## Author 
 
 Made with 💜 by [aleco_rodri](https://twitter.com/aleco_rodri)
